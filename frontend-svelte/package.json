@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "dev": "routify -c dev:vite ",
+    "build": "routify -b && vite build",
+    "dev:vite": "vite",
+    "serve": "vite preview",
+    "validate": "svelte-check"
+  },
+  "devDependencies": {
+    "@roxi/routify": "^2.15.1",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.7",
+    "carbon-components-svelte": "^0.33.0",
+    "clipboard-copy": "^3.2.0",
+    "html-minifier": "^4.0.0",
+    "svelte": "^3.37.0",
+    "svelte-check": "^1.4.0",
+    "tailwindcss": "^2.1.2",
+    "vite": "^2.1.5"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0"
+  }
+}

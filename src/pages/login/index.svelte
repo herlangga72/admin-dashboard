@@ -25,10 +25,8 @@
             }
         })
         .then(function(response) {
-            name.subscribe(val => localStorage.setItem("name", Email));
-            IsLogin.subscribe(val => localStorage.setItem("IsLogin", 1));
-            name.update(n => Email)
-            IsLogin.update(n => 1)
+            $name=Email
+            $IsLogin=1
             $goto('./../dashboard')
         })
         // this will catch the error if it thrown in line 19

@@ -2,10 +2,8 @@
 import { goto } from '@roxi/routify';
 ;
     import { IsLogin } from '../../store.js'
-    let loginAuth;
-	IsLogin.subscribe( value => {loginAuth = value;} );
     function authenticate(){
-        if (loginAuth==1){
+        if ($IsLogin==1){
             return true;
         }
         else{

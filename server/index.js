@@ -10,9 +10,5 @@ app.post('/login/', function(req, res){
     let pass=req.body.pass;
     res.send();
 });
-app.post('/logoff', function(req, res){
-    res.header("Access-Control-Allow-Origin", "*");
-    
-    res.send();
-})
+
 app.listen(2000);

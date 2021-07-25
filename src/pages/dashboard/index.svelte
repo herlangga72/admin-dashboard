@@ -6,24 +6,21 @@
     metatags.title = 'Dashboard'
     
     function logoff(){
-        IsLogin.update(n => 0)
+        $IsLogin=0
+        $name=null
         $goto('./../login')
     }
 
-    let NameValue;
-	
-    name.subscribe(value => {NameValue = value;});
-
 	const links = [
-		['index', 'home'],
-		['about', 'about'],
-		['./admin', 'admin'],
+		['/index', 'home'],
+		['/about', 'about'],
+		['/admin', 'admin'],
 	]
 
 </script>
 <div>
     Dashboard <br>
-    username {NameValue}<br>
+    username {$name}<br>
     
     <button on:click={logoff}>LogOff</button><br>
 
@@ -32,7 +29,7 @@
 	<div />
 	<div>
 		{#each links as [path, name]}
-			<a href={path}>{name}</a> <br>
+			<a href={'./dashboard'+path}>{name}</a> <br>
 		{/each}
 	</div>
 </div>

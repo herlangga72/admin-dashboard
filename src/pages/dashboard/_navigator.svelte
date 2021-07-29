@@ -12,7 +12,7 @@
     }
 
 	const links = [
-		['index', 'home' , 0 ],
+		['', 'home' , 0 ],
 		['about', 'about', 0 ],
 		['Settings', 'setting', 0 ],
 	]
@@ -28,7 +28,9 @@
 	<div>
 		{#each links as [path, name, Level]}
             {#if AccessLevel.GetValue() >= Level}
-                <a href={'../dashboard/'+path}>{name}</a> <br/>
+                <a href={'http://localhost:3000/dashboard/'+path}> 
+                    {name} 
+                </a> <br/>
             {/if}
 		{/each}
 	</div>

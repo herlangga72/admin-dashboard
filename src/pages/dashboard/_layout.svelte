@@ -1,6 +1,5 @@
 <script>
-import { goto } from '@roxi/routify';
-;
+    import { goto } from '@roxi/routify'
     import { IsLogin } from '../../store.js'
     function authenticate(){
         if (IsLogin.GetValue()==1){

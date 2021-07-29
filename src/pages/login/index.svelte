@@ -1,12 +1,12 @@
 <script>
-    //setting page name
+// herlangga pass:1
     import { goto, metatags } from '@roxi/routify'
     import { name,IsLogin } from './../../store.js'
     metatags.title = 'Login'
     if (IsLogin.GetValue()==1){
         $goto('./../dashboard')
     }
-    let Email,Password
+    let Username,Password
     function mod_login(){
         let ToServer={
             method: "post",
@@ -15,33 +15,32 @@
                 'Content-type': "application/json"
             },
             body: JSON.stringify({
-                uname: Email,
+                uname: Username,
                 pass: Password
             })
         }
-        var fromServer = fetch('http://localhost:2000/login', ToServer)
+        fetch('http://localhost:2000/login', ToServer)
         .then(function(response){
             if( !response.ok){
                 //add error password / user error here
-                throw Error (response.statusText);
+                throw Error (response.statusText)
+            }
+            else{
+                name.SetValue(Username)
+                IsLogin.SetValue(1)
+                $goto('./../dashboard')
             }
         })
-        .then(function(response) {
-            name.SetValue(Email);
-            IsLogin.SetValue(1);
-            $goto('./../dashboard')
-        })
         // this will catch the error if it thrown in line 19
-        .catch(error => console.log("there was an error --> " + error));            
+        .catch(error => console.log("there was an error --> " + error))         
     }
 </script>
 <div>
     <div>Login</div>
-    <div></div>
 </div>
 <div>
-    <div>Email</div>
-    <input bind:value={Email} type=text>
+    <div>Username</div>
+    <input bind:value={Username} type=text>
     <div>Password</div>
     <input bind:value={Password} type=password>
     <br>

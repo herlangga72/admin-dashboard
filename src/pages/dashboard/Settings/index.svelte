@@ -1,1 +1,3 @@
-<a href="Settings/Users">Test</a>
+<a href="Settings/Users">
+    Test
+</a>

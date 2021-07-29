@@ -1,15 +1,17 @@
-import { writable } from 'svelte/store';
 class _LocalStorage{
-    constructor( ValueName, value = null ){
-        this.name  = ValueName;
-        this.value = localStorage.getItem(ValueName) || value;
+    constructor( VarName, value = null ){
+        // set class name for getting correct value on Local storage
+        this.name  = VarName
+        // https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector/Local_Storage_Session_Storage
+        // getvalue on local storage or set default number
+        this.value = localStorage.getItem(this.name) || value
     }
     SetValue(value){
         localStorage.setItem(this.name,value)
-        this.value = value;
+        this.value = value
     }
     GetValue(){
-        return this.value;
+        return this.value
     }
 }
 export const name = new _LocalStorage('name','')

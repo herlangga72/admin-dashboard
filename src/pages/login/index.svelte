@@ -3,7 +3,9 @@
     import { goto, metatags } from '@roxi/routify'
     import { name,IsLogin } from './../../store.js'
     metatags.title = 'Login'
-
+    if (IsLogin.GetValue()==1){
+        $goto('./../dashboard')
+    }
     let Email,Password
     function mod_login(){
         let ToServer={
@@ -25,8 +27,8 @@
             }
         })
         .then(function(response) {
-            $name=Email
-            $IsLogin=1
+            name.SetValue(Email);
+            IsLogin.SetValue(1);
             $goto('./../dashboard')
         })
         // this will catch the error if it thrown in line 19
@@ -38,7 +40,10 @@
     <div></div>
 </div>
 <div>
-    <div>Email</div><input bind:value={Email} type=text>
-    <div>Password</div><input bind:value={Password} type=password>
+    <div>Email</div>
+    <input bind:value={Email} type=text>
+    <div>Password</div>
+    <input bind:value={Password} type=password>
+    <br>
     <button on:click={mod_login} >Login</button>
 </div>

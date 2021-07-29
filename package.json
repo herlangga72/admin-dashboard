@@ -9,6 +9,8 @@
   "devDependencies": {
     "@roxi/routify": "^2.18.2",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.7",
+    "carbon-components-svelte": "^0.42.0",
+    "carbon-icons-svelte": "^10.36.0",
     "html-minifier": "^4.0.0",
     "svelte": "^3.38.2",
     "svelte-check": "^2.1.0",

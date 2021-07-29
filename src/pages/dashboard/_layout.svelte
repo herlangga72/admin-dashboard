@@ -3,7 +3,7 @@ import { goto } from '@roxi/routify';
 ;
     import { IsLogin } from '../../store.js'
     function authenticate(){
-        if ($IsLogin==1){
+        if (IsLogin.GetValue()==1){
             return true;
         }
         else{

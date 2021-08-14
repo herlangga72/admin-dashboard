@@ -16,8 +16,10 @@ const minifyHtml = () => {
 
 export default defineConfig(({ mode }) => {
   const isProduction = mode === 'production';
-
-  return {
+  return { 
+    server: {				
+      host: '0.0.0.0'
+    },
     optimizeDeps: {
       exclude: ['@roxi/routify'],
     },

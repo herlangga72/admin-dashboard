@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "routify -c dev:vite ",
+    "dev": "routify -c dev:vite",
     "build": "svelte-check && routify -b && vite build",
     "dev:vite": "vite",
     "serve": "vite preview",

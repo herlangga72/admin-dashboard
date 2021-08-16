@@ -15,23 +15,37 @@
 	let searchValue
 	let staticData
 	let searchKey = 'uname'
-	let totalData = 1000
-	let pageSize
-	let page
+	let totalData 
+	let pageSize = 5
+	let page=1
 	let loading=1
 	let HeaderCol
-	function test() {
-		console.log(page)
-	}
-	// Get the data by using async and await
-	getData()
+	async function getTotalUser() {
+		totalData = await fetch('http://localhost:2000/User/TotalData',{method:'POST'})
+		.then((response) => response.json()).then((datas) => {return datas[0]["Value"]})
+		console.log(totalData)
+	} 
+	getTotalUser()
 	async function getData() {
 		// edit this to contain current page information
-		rowData = await fetch('http://localhost:2000/getdata',{method:'POST'}).then((response) => response.json()).then((datas) => {return datas})
+		let calc=(page-1)*pageSize+1
+		let ToServer={
+            method: "post",
+            headers: {
+                'Accept': "application/json",
+                'Content-type': "application/json"
+            },
+            body: JSON.stringify({
+				id:calc,
+				Size: pageSize
+            })
+        }
+		rowData = await fetch('http://localhost:2000/User/Data',ToServer)
+		.then((response) => response.json()).then((datas) => {return datas})
 		loading = 0
 		staticData = rowData
+		search()
 	}
-	// New Function for pagination on:change page 
 	// Function the search bar used
     function search() {
 		rowData = staticData
@@ -39,6 +53,7 @@
 			rowData = staticData.filter( data => data[searchKey].includes(searchValue.toLowerCase()))
 		}
     }
+	getData()
     HeaderCol=[
         { key: "id", value: 'Index' }, 
         { key: "uname", value: 'Nama' }, 
@@ -77,5 +92,5 @@
 			{:else}{cell.value}{/if}
 		</span>
 	</DataTable>
-	<Pagination totalItems={totalData} pageSizes={[10, 20, 30]} pageSize={pageSize} bind:page={page} on:update={test}/>
+	<Pagination totalItems={totalData} pageSizes={[5, 10, 20, 30]} bind:pageSize={pageSize} bind:page={page} on:update={getData}/>
 {/if}

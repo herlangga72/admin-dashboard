@@ -18,7 +18,7 @@
 	// Get the data by using async and await
 	getData()
 	async function getData() {
-		data = await fetch('http://localhost:2000/getdata',{method:'POST'}).then((response) => response.json()).then((datas) => {return datas})
+		data = await fetch(import.meta.env.VITE_SERVER+'/getdata',{method:'POST'}).then((response) => response.json()).then((datas) => {return datas})
 		loading = 0
 		static_data = data
 	}

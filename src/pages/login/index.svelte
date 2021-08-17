@@ -19,7 +19,7 @@
                 pass: Password
             })
         }
-        fetch('http://localhost:2000/login', ToServer)
+        fetch(import.meta.env.VITE_SERVER+'/login', ToServer)
         .then(function(response){
             if( !response.ok){
                 //add error password / user error here

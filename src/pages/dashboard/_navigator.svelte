@@ -28,7 +28,7 @@
 	<div>
 		{#each links as [path, name, Level]}
             {#if AccessLevel.GetValue() >= Level}
-                <a href={'http://localhost:3000/dashboard/'+path}> 
+                <a href={'http://192.168.0.107:3000/dashboard/'+path}> 
                     {name} 
                 </a> <br/>
             {/if}

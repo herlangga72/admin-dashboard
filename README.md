@@ -1,4 +1,6 @@
 # routify-windi
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fherlangga72%2Fadmin-dashboard.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fherlangga72%2Fadmin-dashboard?ref=badge_shield)
+
 
 Use Windi CSS (_Next generation of Tailwind CSS compiler_) with Vite in Routify. What is Windi CSS? see [Windi CSS](https://github.com/windicss/windicss) for more informations.
 
@@ -26,3 +28,7 @@ See [routify-windi.vercel.app](https://routify-windi.vercel.app/).
 - [routify-vite](https://github.com/lamualfa/routify-vite) Use Vite (_Next Generation Frontend Tooling_) in Routify.
 - [routify-carbon](https://github.com/lamualfa/routify-carbon) - Use IBM Carbon Framework in Routify.
 - [routify-vite-ts](https://github.com/lamualfa/routify-vite-ts) Use Vite (_Next Generation Frontend Tooling_) & Typescript in Routify.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fherlangga72%2Fadmin-dashboard.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fherlangga72%2Fadmin-dashboard?ref=badge_large)
